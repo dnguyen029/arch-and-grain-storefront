@@ -1,0 +1,7 @@
+{
+  "name": "Arch & Grain Storefront",
+  "description": "A luxury bathroom vanity e-commerce storefront featuring Material 3 Expressive design, a warm matte palette, and a Gemini-powered design consultant.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

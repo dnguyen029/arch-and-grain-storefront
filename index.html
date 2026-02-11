@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arch & Grain | Luxury Bathroom Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --m3-oat: #FDF8F5;
+            --m3-clay: #F5E9E2;
+            --m3-coffee: #2C1810;
+            --m3-terracotta: #8D4E3F;
+            --m3-sand: #D9B382;
+            --m3-surface-variant: #EBE0D8;
+        }
+        
+        body {
+            font-family: 'Instrument Sans', sans-serif;
+            background-color: var(--m3-oat);
+            color: var(--m3-coffee);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .luxury-serif {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.02em;
+        }
+
+        /* Material 3 Expressive: The Grain Texture Overlay */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+            filter: contrast(150%) brightness(100%);
+        }
+
+        /* Expressive Motion Reveals */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+
+        /* Custom Scrollbar for Luxury Experience */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--m3-oat);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--m3-clay);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--m3-sand);
+        }
+
+        /* Material 3 Button Interaction */
+        .m3-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+        }
+        .m3-btn:active {
+            transform: scale(0.97);
+        }
+        
+        /* Mask for architectural reveal */
+        .arch-mask {
+            clip-path: ellipse(100% 100% at 50% 100%);
+            transition: clip-path 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active .arch-mask {
+            clip-path: ellipse(150% 150% at 50% 50%);
+        }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+        "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div class="grain-overlay"></div>
+    <div id="root"></div>
+</body>
+</html>
