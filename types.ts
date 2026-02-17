@@ -1,6 +1,7 @@
 
 export interface Product {
-  id: string;
+  id: string; // Product ID
+  variantId?: string; // Main variant ID for simple products, needed to add to cart
   name: string;
   description: string;
   price: number;
