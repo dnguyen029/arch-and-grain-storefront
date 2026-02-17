@@ -45,10 +45,54 @@ export const productType = defineType({
             type: 'array',
             of: [{ type: 'image', options: { hotspot: true } }],
         }),
+
         defineField({
             name: 'description',
             title: 'Description',
             type: 'text', // Simple text for now, could be portable text
+        }),
+        defineField({
+            name: 'features',
+            title: 'Features (Bullet Points)',
+            type: 'array',
+            of: [{ type: 'string' }],
+        }),
+        defineField({
+            name: 'specifications',
+            title: 'Specifications',
+            type: 'array',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        { name: 'label', type: 'string', title: 'Label' },
+                        { name: 'value', type: 'string', title: 'Value' },
+                    ],
+                    preview: {
+                        select: {
+                            title: 'label',
+                            subtitle: 'value',
+                        },
+                    },
+                },
+            ],
+        }),
+        defineField({
+            name: 'downloads',
+            title: 'Downloads / Resources',
+            type: 'array',
+            of: [
+                {
+                    type: 'file',
+                    fields: [
+                        {
+                            name: 'title',
+                            type: 'string',
+                            title: 'Title',
+                        },
+                    ],
+                },
+            ],
         }),
         defineField({
             name: 'material',
