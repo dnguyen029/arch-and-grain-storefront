@@ -21,7 +21,7 @@ const DesignConsultant: React.FC<DesignConsultantProps> = ({ isOpen, onClose, pr
     if (!input.trim()) return;
 
     setLoading(true);
-    const result = await getDesignAdvice(input);
+    const result = await getDesignAdvice(input, products);
     setAdvice(result);
     setLoading(false);
   };
